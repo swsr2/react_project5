@@ -1,0 +1,67 @@
+.movie-explain {
+    font-size: 18px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 1rem;
+    margin-bottom: 20px;
+}
+
+.movie-explain div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.movie-explain svg {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.movie-explain span {
+    font-size: 14px;
+    color: #666;
+}
+.overview{
+    margin: 20px 0; 
+    line-height: 1.5;
+}
+.extra-data{
+    display: flex;
+    flex-direction: column;    
+}
+.extra-data div{
+    display: flex; 
+    align-items: center;
+    padding: 0.5rem;
+}
+.divider-line {
+    border: none;
+    border-top: 2px solid gray; 
+    margin: 20px 0;
+    width: 100%;
+}
+.reviews-container{
+    padding-top: 50px;
+}
+.review-item hr {
+    border: none;
+    border-top: 2px solid red;
+    margin: 10px 0;
+}
+.recommendations-container {
+    padding-top: 50px;
+}
+.button-row {
+    margin-top: 20px; /* Adds space above the buttons */
+    display: flex;
+    justify-content: center; /* Aligns buttons horizontally */
+    gap: 10px; /* Adds space between the buttons */
+}
+
+.button-row button {
+    padding: 10px 20px; /* Adjusts the button size */
+    font-size: 14px; /* Sets font size for better readability */
+    border-radius: 5px; /* Rounds the button corners */
+}

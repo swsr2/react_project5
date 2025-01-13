@@ -1,0 +1,73 @@
+.custom-navbar {
+    background-color: #000 !important; /* Navbar 배경색 검정 */
+}
+
+.custom-nav-links .nav-link {
+    color: #fff !important; /* Nav.Link 텍스트 색상 하얀색 */
+}
+
+.custom-nav-links .nav-link:hover {
+    color: #ff4d4d !important; /* 링크 호버 시 빨간색 */
+}
+
+.custom-search {
+    background-color: #808080 !important; /* Search input background gray */
+    color: #fff !important; /* Search input text white */
+    border: none; /* Optional: remove border */
+    width: 100%;
+    max-width: 300px; /* Search input 최대 너비 설정 */
+}
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 최소 높이를 뷰포트에 맞춤 */
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .custom-navbar .navbar-collapse {
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .custom-nav-links {
+        margin-top: 10px;
+    }
+
+    .custom-search {
+        max-width: 100%; /* 모바일에서 너비를 100%로 확장 */
+    }
+
+    .custom-navbar .navbar-brand img {
+        max-width: 120px; /* 모바일에서 로고 크기 축소 */
+        height: auto;
+    }
+
+    .custom-nav-links .nav-link {
+        font-size: 14px; /* 모바일에서 링크 글자 크기 축소 */
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-navbar .navbar-brand img {
+        max-width: 100px; /* 더 작은 화면에서 로고 크기 조정 */
+    }
+
+    .custom-search {
+        padding: 5px; /* 모바일에서 검색 인풋 패딩 축소 */
+    }
+
+    .custom-nav-links .nav-link {
+        font-size: 12px; /* 링크 글자 크기 더 축소 */
+    }
+
+    .navbar-toggler {
+        border-color: #fff; /* 토글 버튼 경계색 조정 */
+        color: #f8f9fa; /* 토글 아이콘 색상 밝게 조정 */
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2899, 99, 99, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important; /* 밝은 색상의 토글 아이콘 */
+}

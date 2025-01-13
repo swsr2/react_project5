@@ -1,0 +1,31 @@
+.recommendations-slide {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0; /* Add some padding for better spacing */
+}
+
+.movie-card {
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Fixed height */
+    width: 200px; /* Fixed width */
+    margin: 0 auto; /* Center the slides */
+    border-radius: 10px; /* Optional */
+    overflow: hidden; /* Prevent overflow */
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+.movie-slider {
+    margin: 0 10px; /* 슬라이드 간의 간격 */
+}

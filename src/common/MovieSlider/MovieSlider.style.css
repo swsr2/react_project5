@@ -1,0 +1,26 @@
+.carousel-container {
+    overflow: hidden;
+    height: auto; /* Adjust height dynamically based on content */
+}
+
+.movielist-area {
+    padding: 1rem; /* Add padding for mobile layout */
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        display: flex;
+        justify-content: center;
+        height: 330px; /* Adjust the height for mobile screens */
+    }
+
+    .movie-card {
+        width: 90%; /* Make the card slightly smaller for mobile */
+        height: 220px; /* Adjust the height for mobile */
+    }
+
+    .overlay {
+        font-size: 14px; /* Adjust overlay text size */
+        padding: 0.5rem; /* Add padding inside overlay */
+    }
+}

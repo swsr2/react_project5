@@ -1,0 +1,92 @@
+.banner {
+    height: 56vh; /* 기본 높이를 vh 단위로 설정 */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* 반드시 relative로 설정해야 :before와 텍스트를 겹치지 않게 조정 가능 */
+}
+
+/* 그라데이션 효과 */
+.banner:before {
+    content: '';
+    background: linear-gradient(to top, black, transparent); /* 검은색에서 투명으로 변하는 그라데이션 */
+    position: absolute;
+    left: 0;
+    top: 0; /* :before를 배너 상단에 위치 */
+    height: 100%; /* 배너 전체 높이를 덮음 */
+    width: 100%;
+    z-index: 1; /* 텍스트 아래에 위치 */
+}
+
+/* 텍스트 영역 */
+.banner-text-area {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    position: relative; /* 텍스트가 그라데이션 위로 올라오도록 설정 */
+    z-index: 2; /* 텍스트를 그라데이션 위에 표시 */
+}
+
+.banner-text-area > * {
+    z-index: 2;
+}
+
+/* 텍스트 크기 조정 */
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    z-index: 2;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    z-index: 2;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .banner {
+        height: 40vh; /* Adjust banner height for mobile */
+        padding: 1rem;
+    }
+
+    .banner-text-area {
+        width: 60%; /* Extend width on tablets */
+        padding: 1rem; /* Reduce padding for better spacing */
+    }
+
+    .banner h1 {
+        font-size: 1.8rem; /* Reduce heading size on mobile */
+    }
+
+    .banner p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+        line-height: 1.4; /* Adjust spacing for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 35vh; /* Further reduce banner height for small devices */
+    }
+
+    .banner-text-area {
+        width: 80%; /* Extend width further for smaller screens */
+        padding: 1rem; /* Maintain consistency with smaller padding */
+    }
+
+    .banner h1 {
+        font-size: 1.5rem; /* Even smaller heading */
+    }
+
+    .banner p {
+        font-size: 0.8rem; /* Adjust text size */
+        line-height: 1.3;
+    }
+}
