@@ -33,7 +33,7 @@ const ReviewItem = ({ index, review }) => {
                         color: 'white',
                     }}
                 >
-                    {isExpanded ? '더보기' : '닫기'}
+                    {isExpanded ? '닫기' : '더보기'}
                 </Button>
             )}
             <hr />
