@@ -1,26 +1,16 @@
-.carousel-container {
-    overflow: hidden;
-    height: auto; /* Adjust height dynamically based on content */
+/* Carousel 아이템 */
+.custom-carousel-item {
+    margin: 0 8px !important; /* Adjust spacing between items */
+    box-sizing: border-box; /* Includes padding and margin in size calculations */
+    position: relative; /* Context for overlay */
+    overflow: visible; /* Allows overlay to extend beyond the item */
+    width: auto !important; /* Automatically adjusts width */
 }
 
-.movielist-area {
-    padding: 1rem; /* Add padding for mobile layout */
-}
-
+/* 모바일 대응 */
 @media (max-width: 480px) {
-    .carousel-container {
-        display: flex;
-        justify-content: center;
-        height: 330px; /* Adjust the height for mobile screens */
-    }
-
-    .movie-card {
-        width: 90%; /* Make the card slightly smaller for mobile */
-        height: 220px; /* Adjust the height for mobile */
-    }
-
-    .overlay {
-        font-size: 14px; /* Adjust overlay text size */
-        padding: 0.5rem; /* Add padding inside overlay */
+    .custom-carousel-item {
+        margin: 0 4px !important; /* 모바일 간격 최소화 */
+        width: calc(100% - 8px) !important; /* 카드가 화면에 꽉 차도록 설정 */
     }
 }

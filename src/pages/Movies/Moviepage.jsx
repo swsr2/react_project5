@@ -93,13 +93,13 @@ const Moviepage = () => {
     // 정렬 로직
     const sortedMovies = combinedResults
         ? [...combinedResults].sort((a, b) => {
-              if (sortOrder === "most") {
-                  return b.popularity - a.popularity;
-              } else if (sortOrder === "least") {
-                  return a.popularity - b.popularity;
-              }
-              return 0;
-          })
+            if (sortOrder === "most") {
+                return b.popularity - a.popularity;
+            } else if (sortOrder === "least") {
+                return a.popularity - b.popularity;
+            }
+            return 0;
+        })
         : [];
 
     return (
@@ -160,19 +160,17 @@ const Moviepage = () => {
                         className="pagination d-flex justify-content-center"
                         nextLabel="next >"
                         onPageChange={handlePageClick}
-                        pageRangeDisplayed={3}
-                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5} // Always display 5 page numbers
+                        marginPagesDisplayed={0} // No extra pages at the start or end
                         pageCount={keyword ? searchData?.total_pages : discoverData?.total_pages}
-                        previousLabel="< previous"
+                        previousLabel="< prev"
                         pageClassName="page-item"
                         pageLinkClassName="page-link"
                         previousClassName="page-item"
                         previousLinkClassName="page-link"
                         nextClassName="page-item"
                         nextLinkClassName="page-link"
-                        breakLabel="..."
-                        breakClassName="page-item"
-                        breakLinkClassName="page-link"
+                        breakLabel={null} // Removes ellipses (breaks)
                         containerClassName="pagination"
                         activeClassName="active"
                         renderOnZeroPageCount={null}

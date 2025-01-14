@@ -9,8 +9,8 @@ export const responsive = {
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1, // Display only 1 item on mobile
-        slidesToSlide: 1, // Move 1 slide at a time
-        centerMode: true, // Center the single visible slide
+        items: 1,
+        slidesToSlide: 1,
+        centerMode: true,
     },
 };

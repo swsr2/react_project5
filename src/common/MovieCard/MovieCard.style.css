@@ -1,59 +1,74 @@
+/* Movie List Area */
+.movielist-area {
+    padding: 1rem; /* Adds spacing around the slider */
+    margin: 0 auto; /* Centers the slider */
+    /* max-width: 1200px;  */
+}
+
+/* Custom Carousel Items */
+.custom-carousel-item {
+    margin: 0 8px !important; /* Adjust spacing between items */
+    box-sizing: border-box; /* Includes padding and margin in size calculations */
+    position: relative; /* Context for overlay */
+    overflow: visible; /* Allows overlay to extend beyond the item */
+    width: auto !important; /* Automatically adjusts width */
+}
+
+/* Movie Card */
 .movie-card {
     width: 220px;
     height: 300px;
-    background-size: cover;
+    background-size: cover; /* Ensures the background image covers the card */
     cursor: pointer;
-    transition: 0.5s ease; /* 부드러운 애니메이션 */
-    position: relative; 
-    z-index: 1; /* 기본 z-index */
+    transition: transform 0.5s ease; /* Smooth hover effect */
+    position: relative; /* Context for overlay */
+    z-index: 1; /* Default stacking order */
+    overflow: visible; /* Ensures overlay is not clipped */
 }
 
 .movie-card:hover {
-    transform: scale(1.1); /* 확대 효과 */
-    z-index: 10; /* Hover 시 카드 앞으로 */
+    transform: scale(1.1); /* Slightly enlarges the card on hover */
+    z-index: 10; /* Brings the card to the front */
 }
 
-@media (max-width: 480px) {
-    .movie-card {
-        width: 100%; /* 부모 컨테이너에 맞는 너비 */
-        height: auto; /* 비율 자동 조정 */
-        margin: 0 auto; /* 카드 가운데 정렬 */
-        transition: 0.3s ease-in-out; /* 부드러운 애니메이션 속도 조정 */
-    }
-}
-/* 오버레이 스타일 */
+/* Overlay */
 .overlay {
-    width: 100%;
-    height: 100%;
-    background: rgba(43, 41, 41, 0.9); /* 어두운 오버레이 */
-    opacity: 0;
-    transition: all 1s;
-    position: absolute; 
+    width: 100%; /* Matches the card's width */
+    height: 100%; /* Matches the card's height */
+    background: rgba(43, 41, 41, 0.9); /* Adds a dark overlay */
+    opacity: 0; /* Initially hidden */
+    transition: all 0.5s ease; /* Smooth fade-in effect */
+    position: absolute; /* Positioned relative to the card */
     top: 0;
     left: 0;
-    z-index: 2; 
+    z-index: 2; /* Sits above the card */
     color: white;
     font-weight: bold;
-    padding: 1rem;
-    overflow-wrap: break-word;
-
+    padding: 1rem; /* Adds spacing inside the overlay */
+    box-sizing: border-box; /* Includes padding in size calculations */
+    overflow: hidden; /* Prevents content from spilling out */
 }
 
-.movie-card:hover {
-    transform: scale(1.3) translateZ(20px);
-    z-index: 2; 
+.movie-card:hover .overlay {
+    opacity: 1; /* Shows the overlay on hover */
 }
 
-.overlay:hover {
-    opacity: 1;
+/* Overlay Content */
+.overlay > * {
+    display: block;
+    white-space: normal; /* Ensures text wraps */
+    overflow: visible; /* Prevents clipping */
 }
+
+/* Movie Explain Section */
 .movie-explain {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px; /* Adds space between elements */
     padding-top: 1rem;
+    overflow-wrap: break-word; /* Prevents word-breaking issues */
 }
 
 .movie-explain div {
@@ -72,25 +87,34 @@
     color: #666;
 }
 
-.carousel-container {
-    width: 100%; /* 컨테이너 전체 너비 */
-    overflow: visible; /* 오버플로우 허용 */
-    display: flex;
-    justify-content: center; 
-    align-items: center; /* 카드 수직 정렬 */
-    position: relative;
-    z-index: 0;
-}
-
-.carousel-item {
-    flex: 0 0 auto; /* 카드 크기 고정 */
-    transition: transform 0.3s ease; /* 부드러운 전환 */
-    position: relative; /* Ensure stacking context within item */
-    z-index: 0; 
-}
-
+/* Mobile Adjustments */
 @media (max-width: 480px) {
-    .carousel-container {
-        padding: 0; /* 여백 제거 */
+    .movielist-area {
+        padding: 0.5rem; /* Reduces padding for smaller screens */
+    }
+
+    .custom-carousel-item {
+        margin: 0 4px !important; /* Reduces item spacing */
+        width: calc(100% - 8px) !important; /* Ensures the card fits within the viewport */
+    }
+
+    .movie-card {
+        width: calc(100% - 16px); /* Matches the container width */
+        height: auto; /* Maintains aspect ratio */
+        margin: 0 auto; /* Centers the card */
+        transition: transform 0.3s ease-in-out; /* Adjusts animation speed */
+    }
+
+    .overlay {
+        padding: 0.5rem; /* Reduces overlay padding */
+    }
+
+    .movie-explain {
+        font-size: 10px; /* Adjusts text size */
+        gap: 5px; /* Reduces spacing */
+    }
+
+    .movie-explain svg {
+        font-size: 12px;
     }
 }
