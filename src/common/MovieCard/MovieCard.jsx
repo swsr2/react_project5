@@ -7,10 +7,10 @@ import { faHeart, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
 import { useNavigate } from 'react-router-dom'
 const MovieCard = ({ movie }) => {
-    // console.log("movie", movie)
+
 
     const { data: genreData } = useMovieGenreQuery()
-    // console.log("장르", genreData )
+
     const navigate = useNavigate()
     const showGenre = (genreIdList) => {
     if (!genreData) return [];
@@ -19,7 +19,7 @@ const MovieCard = ({ movie }) => {
         return genreObj ? genreObj.name : "Unknown Genre";
     });
     };
-    // 디테일 페이지 
+
     const movieDetail = () => {
         let id = movie.id
         navigate(`/movie/${id}`)

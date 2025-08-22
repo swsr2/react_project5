@@ -8,6 +8,6 @@ export const useMovieTrailerQuery = (movieId) => {
             const { data } = await api.get(`/movie/${movieId}/videos`);
             return data;
         },
-        enabled: !!movieId, // Ensure the query only runs if movieId is available
+        enabled: !!movieId,
     });
 };

@@ -13,18 +13,15 @@ import './DetailMovieCard.style.css';
 const DetailMovieCard = ({ detail }) => {
     const movieDetailId = detail?.id;
 
-    // Fetch data
+
     const { data: reviewData } = useMovieReviewQuery(movieDetailId);
     const { data: recommendationsData } = useRecommendationQuery(movieDetailId);
     const { data: trailerData, isLoading: isTrailerLoading } = useMovieTrailerQuery(movieDetailId);
 
-    // console.log("예고편데이터", trailerData)
-
     const [showReviews, setShowReviews] = useState(false);
     const [showRecommendation, setRecommendation] = useState(false);
-    const [show, setShow] = useState(false); // Modal state
+    const [show, setShow] = useState(false); 
 
-    // Toggle reviews
     const review = () => {
         setShowReviews((prev) => !prev);
         if (showRecommendation) {
@@ -32,7 +29,7 @@ const DetailMovieCard = ({ detail }) => {
         }
     };
 
-    // Toggle recommendations
+
     const recommendationMovies = () => {
         setRecommendation((prev) => !prev);
         if (showReviews) {
@@ -40,11 +37,11 @@ const DetailMovieCard = ({ detail }) => {
         }
     };
 
-    // Modal handlers
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // Get the trailer video key
+
     const trailerKey =
         trailerData?.results?.find((video) => video.type === 'Trailer' && video.site === 'YouTube')?.key;
 

@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# React Movie App (Project 5)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TMDb API를 활용하여 만든 영화 정보 제공 웹 애플리케이션입니다. 사용자들은 이 앱을 통해 현재 인기 있는 영화, 평점이 높은 영화, 개봉 예정인 영화들을 둘러보고, 원하는 영화를 검색하며 상세 정보를 확인할 수 있습니다.
 
-## Available Scripts
+## ✨ 주요 기능
 
-In the project directory, you can run:
+- **메인 페이지**: 인기, 평점 높은, 개봉 예정 영화 목록을 슬라이드 형태로 제공합니다.
+- **영화 목록 페이지**: 전체 영화 목록을 페이지네이션과 함께 보여주며, 키워드 검색 기능을 제공합니다.
+- **영화 상세 페이지**: 영화의 포스터, 줄거리, 평점, 예고편(YouTube 연동), 관련 추천 영화 및 리뷰를 확인할 수 있습니다.
+- **반응형 디자인**: 웹, 태블릿, 모바일 등 다양한 디바이스에서 최적화된 화면을 제공합니다.
+- **데이터 관리**: React Query를 사용하여 서버 상태를 효율적으로 관리하고, 캐싱을 통해 사용자 경험을 향상시킵니다.
 
-### `npm start`
+## 🛠️ 사용된 기술
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, React-Router-DOM
+- **Styling**: Bootstrap, React-Bootstrap, CSS
+- **State Management**: React Query
+- **HTTP Client**: Axios
+- **Deployment**: Netlify
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 시작하기
 
-### `npm test`
+### 1. 프로젝트 클론
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository-url>
+cd project5
+```
 
-### `npm run build`
+### 2. 의존성 설치
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. 환경 변수 설정
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+프로젝트 루트 디렉토리에 `.env` 파일을 생성하고, TMDb에서 발급받은 API 키를 추가해야 합니다.
 
-### `npm run eject`
+```
+REACT_APP_API_KEY=여러분의_TMDb_API_키
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> TMDb API 키는 [공식 홈페이지](https://www.themoviedb.org/settings/api)에서 발급받을 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. 프로젝트 실행
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+브라우저에서 `http://localhost:3000` 주소로 접속하여 앱을 확인할 수 있습니다.
 
-## Learn More
+## 📜 주요 스크립트
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `npm start`: 개발 모드로 앱을 실행합니다.
+- `npm run build`: 프로덕션용으로 앱을 빌드합니다.
+- `npm test`: 테스트를 실행합니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 폴더 구조
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+src/
+├── common/         # 공통 재사용 컴포넌트 (MovieCard, Slider 등)
+├── constants/      # 공통 상수 (반응형 설정 등)
+├── hooks/          # API 호출 및 상태 관리를 위한 커스텀 훅
+├── layout/         # 앱의 전체 레이아웃 (Header, Footer 등)
+├── pages/          # 라우팅되는 페이지 컴포넌트
+│   ├── Homepage/
+│   ├── MovieDetail/
+│   ├── Movies/
+│   └── NotFoundPage/
+├── utils/          # 유틸리티 함수 (axios 인스턴스 등)
+└── App.js          # 메인 애플리케이션 컴포넌트 및 라우팅 설정
+```

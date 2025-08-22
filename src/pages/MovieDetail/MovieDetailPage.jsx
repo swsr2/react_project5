@@ -1,33 +1,34 @@
-import React from 'react'
-import DetailMovieCard from '../../common/DetailMovieCard/DetailMovieCard'
-import { useMovieDetailQuery } from '../../hooks/useMovieDetail'
-import { Alert, Spinner } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import DetailMovieCard from "../../common/DetailMovieCard/DetailMovieCard";
+import { useMovieDetailQuery } from "../../hooks/useMovieDetail";
+import { Alert, Spinner } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 const MovieDetailPage = () => {
-    const id = useParams()
-    
-    const { data: detail, isError, error, isLoading } = useMovieDetailQuery(id)
-    // console.log("하하하하", detail)
+  const id = useParams();
 
-    if (isLoading) {
-        return <div className='spinner-area'>
-            <Spinner
-                animation='border'
-                variant='danger'
-                style={{ width: "5rem", height: "5rem" }}
-            />
-        </div>
-        }
-        if (isError) {
-        return <Alert variant="danger">{error.message}</Alert>
-        }
-    
+  const { data: detail, isError, error, isLoading } = useMovieDetailQuery(id);
+
+  if (isLoading) {
     return (
-        <div>
-            <DetailMovieCard detail={detail} />
-        </div>
-    )
-}
+      <div className="spinner-area">
+        <Spinner
+          animation="border"
+          variant="danger"
+          style={{ width: "5rem", height: "5rem" }}
+        />
+      </div>
+    );
+  }
+  if (isError) {
+    return <Alert variant="danger">{error.message}</Alert>;
+  }
 
-export default MovieDetailPage
+  return (
+    <div>
+      <DetailMovieCard detail={detail} />
+    </div>
+  );
+};
+
+export default MovieDetailPage;

@@ -12,7 +12,7 @@ const fetchDiscoverMovie = ({ keyword, genre, page }) => {
     });
 };
 
-// Custom hook to fetch movies with genre and page
+
 export const useDiscoverMovieQuery = ({ keyword, genre, page }) => {
     return useQuery({
         queryKey: ['movie-detail', { keyword, genre, page }],

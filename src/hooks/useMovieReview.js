@@ -5,7 +5,6 @@ const fetchMovieReview = (id) => {
 
 }
 export const useMovieReviewQuery = (id) => {
-    console.log("api id", id)
     return useQuery({
         queryKey: ['movie-review', id],
         queryFn: () => fetchMovieReview(id),
