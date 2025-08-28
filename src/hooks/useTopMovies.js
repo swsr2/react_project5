@@ -9,5 +9,6 @@ export const useTopMoviesQuery = () => {
         queryKey: ['top-movie'],
         queryFn: fetchTopMovies,
         select: (result) => result.data,
+        suspense: true,
     })
 }
