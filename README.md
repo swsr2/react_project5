@@ -1,6 +1,7 @@
-# React Movie App (Project 5)
-
+# netflix 클론 코딩
 TMDb API를 활용하여 만든 영화 정보 제공 웹 애플리케이션입니다. 사용자들은 이 앱을 통해 현재 인기 있는 영화, 평점이 높은 영화, 개봉 예정인 영화들을 둘러보고, 원하는 영화를 검색하며 상세 정보를 확인할 수 있습니다.
+
+배포링크: https://clairemovie.netlify.app/
 
 ## ✨ 주요 기능
 
